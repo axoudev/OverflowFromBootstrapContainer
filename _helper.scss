@@ -1,0 +1,17 @@
+@mixin overflowFromContainer($cols: 6, $side: 'right', $breakpoints: $container-max-widths){
+    position: absolute;
+    @each $key, $bp in $breakpoints{
+        @include media-breakpoint-up($key){
+        $width: calc(#{$bp} * #{$cols}/#{$grid-columns} + ((100% - #{$bp})/2));
+        width: $width;
+        @if $side == 'left'{
+            left: 0;
+        }@else if $side == 'right'{
+            right: 0;
+        }
+        .content{
+            width: calc(#{$width} - (((100% - #{$bp})/2) + #{$grid-gutter-width}));
+        }
+        }
+    }
+}
