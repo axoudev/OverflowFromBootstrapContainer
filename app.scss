@@ -1,5 +1,8 @@
 @import './helper'
 
 .side{
-    @include overflowFromContainer($cols: 5, $side: 'right', $breakpoints: $container-max-widths);
+    // @include overflowFromContainer();
+    // @include overflowFromContainer(8);
+    // @include overflowFromContainer(5, 'right',$container-max-widths);
+    @include overflowFromContainer(5, 'left', map-remove($container-max-widths, 'sm', 'md'));
 }
