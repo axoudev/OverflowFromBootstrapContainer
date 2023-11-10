@@ -12,7 +12,7 @@
             .content{
                 width: calc(#{$width} - (((100% - #{$bp})/2) + #{$grid-gutter-width}));
                 @if $side == 'left' {
-                    padding-left: calc(((100% - #{$bp})/2) + #{$grid-gutter-width});
+                    margin-left: auto;
                 }
             }
         }
